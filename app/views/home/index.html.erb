@@ -1,18 +1,19 @@
-<%= content_tag :table, border: "1" do %>
-  <%= content_tag :thead do %>
-    <%= content_tag :tr do %>
-      <%= content_tag :th, "Name" %>
-      <%= content_tag :th, "Date" %>
-      <%= content_tag :th, "Created at" %>
+<%= content_tag :div, class: "container" do %>
+    <%= content_tag :table do %>
+        <%= content_tag :thead do %>
+            <%= content_tag :tr do %>
+            <%= content_tag :th, "Habit" %>
+            <%= content_tag :th, "Date" %>
+            <% end %>
+        <% end %>
+        <%= content_tag :tbody do %>
+            <% @habits.each do |habits| %>
+            <%= content_tag :tr do %>
+                <td><%= habits.Habit %></td>
+                <td><%= habits.created_at %></td>
+            <% end %>
+            <% end %>
+        <% end %>
     <% end %>
-  <% end %>
-  <%= content_tag :tbody do %>
-    <% @habits.each do |habit| %>
-      <%= content_tag :tr do %>
-        <td><%= habit.name %></td>
-        <td><%= habit.frequency %></td>
-        <td><%= habit.created_at.strftime("%Y-%m-%d") %></td>
-      <% end %>
-    <% end %>
-  <% end %>
+    <%= button_tag "Add", class: "add" %>
 <% end %>

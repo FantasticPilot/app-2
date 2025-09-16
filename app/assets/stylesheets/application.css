@@ -11,6 +11,38 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: #93a7d1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+table {
+    background-color: #4f7097;
+    color: #efefef;
+    border-radius: 15px 15px 0 0;
+    padding: 30px;
+    width: 500px;
+    border: solid #efefef 2px 2px 2px 0;
+}
+
+.add {
+    width: 500px;
+    background-color: #efefef;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.add:hover {
     background-color: #444;
     color: #efefef;
+    transition: 300ms;
 }
