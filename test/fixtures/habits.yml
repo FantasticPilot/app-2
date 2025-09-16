@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Habit: MyString
+  Date: 2025-09-15
+
+two:
+  Habit: MyString
+  Date: 2025-09-15

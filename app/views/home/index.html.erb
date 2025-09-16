@@ -1,0 +1,18 @@
+<%= content_tag :table, border: "1" do %>
+  <%= content_tag :thead do %>
+    <%= content_tag :tr do %>
+      <%= content_tag :th, "Name" %>
+      <%= content_tag :th, "Date" %>
+      <%= content_tag :th, "Created at" %>
+    <% end %>
+  <% end %>
+  <%= content_tag :tbody do %>
+    <% @habits.each do |habit| %>
+      <%= content_tag :tr do %>
+        <td><%= habit.name %></td>
+        <td><%= habit.frequency %></td>
+        <td><%= habit.created_at.strftime("%Y-%m-%d") %></td>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
