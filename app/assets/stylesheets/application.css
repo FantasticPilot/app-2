@@ -28,21 +28,43 @@ table {
     border-radius: 15px 15px 0 0;
     padding: 30px;
     width: 500px;
-    border: solid #efefef 2px 2px 2px 0;
+    border-top: solid #efefef 2px;
+    border-left: solid #efefef 2px;
+    border-right: solid #efefef 2px;
 }
 
 .add {
-    width: 500px;
-    background-color: #efefef;
+    background-color: #4f7097;
     border: none;
-    border-radius: 0 0 15px 15px;
+    border-radius: 15px;
     cursor: pointer;
     padding: 15px;
     font-size: 20px;
+    color: #efefef;
 }
 
 .add:hover {
     background-color: #444;
-    color: #efefef;
     transition: 300ms;
+}
+
+th {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.footer {
+    width: 500px;
+    background-color: #efefef;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.text-box {
+    padding: 15px;
 }

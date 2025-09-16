@@ -15,5 +15,8 @@
             <% end %>
         <% end %>
     <% end %>
-    <%= button_tag "Add", class: "add" %>
+    <%= content_tag :div, class: "footer" do %>
+        <%= text_field_tag nil, nil, placeholder: "Enter a habit", class: "text-box" %>
+        <%= button_tag "Add", class: "add" %>
+    <% end %>
 <% end %>
