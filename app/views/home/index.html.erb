@@ -1,6 +1,6 @@
 <%= content_tag :div, class: "container", id: "habit-table" do %>
     <%= content_tag :label, "Habit Tracker", class: "table-label" %>
-    <%= content_tag :table do %>
+    <%= content_tag :table, border: "1" do %>
         <%= content_tag :thead do %>
             <%= content_tag :tr do %>
             <%= content_tag :th, "Habit" %>
@@ -39,5 +39,23 @@
 
         body.appendChild(newHabit);
         textBox.value = "";
+    });
+
+    textBox.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            const newValue = textBox.value;
+            const newHabit = document.createElement("tr");
+
+            const newHabitData = document.createElement("td");
+            newHabitData.textContent = newValue;
+            newHabit.appendChild(newHabitData);
+
+            const newHabitTime = document.createElement("td");
+            newHabitTime.textContent = new Date;
+            newHabit.appendChild(newHabitTime);
+
+            body.appendChild(newHabit);
+            textBox.value = "";
+        };
     });
 </script>
