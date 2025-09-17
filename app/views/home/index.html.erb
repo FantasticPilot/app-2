@@ -1,4 +1,5 @@
-<%= content_tag :div, class: "container" do %>
+<%= content_tag :div, class: "container", id: "habit-table" do %>
+    <%= content_tag :label, "Habit Tracker", class: "table-label" %>
     <%= content_tag :table do %>
         <%= content_tag :thead do %>
             <%= content_tag :tr do %>
@@ -6,7 +7,7 @@
             <%= content_tag :th, "Date" %>
             <% end %>
         <% end %>
-        <%= content_tag :tbody do %>
+        <%= content_tag :tbody, id: "body" do %>
             <% @habits.each do |habits| %>
             <%= content_tag :tr do %>
                 <td><%= habits.Habit %></td>
@@ -16,7 +17,27 @@
         <% end %>
     <% end %>
     <%= content_tag :div, class: "footer" do %>
-        <%= text_field_tag nil, nil, placeholder: "Enter a habit", class: "text-box" %>
-        <%= button_tag "Add", class: "add" %>
+        <%= text_field_tag nil, nil, placeholder: "Enter a habit", class: "text-box", id: "text-box" %>
+        <%= button_tag "Add", class: "add", id: "add-btn" %>
     <% end %>
 <% end %>
+<script> // Content tag for script doesn't offer syntax highlighting so using html tag instead
+    const addButton = document.getElementById("add-btn");
+    const textBox = document.getElementById("text-box");
+    const body = document.getElementById("body");
+    addButton.addEventListener("click", () => {
+        const newValue = textBox.value;
+        const newHabit = document.createElement("tr");
+
+        const newHabitData = document.createElement("td");
+        newHabitData.textContent = newValue;
+        newHabit.appendChild(newHabitData);
+
+        const newHabitTime = document.createElement("td");
+        newHabitTime.textContent = new Date;
+        newHabit.appendChild(newHabitTime);
+
+        body.appendChild(newHabit);
+        textBox.value = "";
+    });
+</script>

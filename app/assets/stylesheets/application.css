@@ -51,6 +51,11 @@ table {
 th {
     text-align: left;
     text-decoration: underline;
+    font-size: 20px;
+}
+
+td {
+    font-size: 20px;
 }
 
 .footer {
@@ -67,4 +72,9 @@ th {
 
 .text-box {
     padding: 15px;
+}
+
+.table-label {
+    color: #efefef;
+    font-size: 40px;
 }
