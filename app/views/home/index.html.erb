@@ -27,6 +27,9 @@
     const body = document.getElementById("body");
     addButton.addEventListener("click", () => {
         const newValue = textBox.value;
+        if (newValue === "") {
+            return;
+        };
         const newHabit = document.createElement("tr");
 
         const newHabitData = document.createElement("td");
@@ -44,6 +47,9 @@
     textBox.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             const newValue = textBox.value;
+            if (newValue === "") {
+                return;
+            }
             const newHabit = document.createElement("tr");
 
             const newHabitData = document.createElement("td");
